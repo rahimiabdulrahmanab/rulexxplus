@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RulexxPlus — Premium Synthetic Motor Oil | Toronto</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#060708;--dark:#0C0E10;--dark2:#111518;--dark3:#181C20;
+  --border:#1F252C;--border2:#2A323C;
+  --gold:#C8960C;--gold2:#E8B020;--gold-light:#F5C842;
+  --gold-dim:rgba(200,150,12,0.10);--gold-glow:rgba(200,150,12,0.25);--gold-border:rgba(200,150,12,0.28);
+  --glass:rgba(255,255,255,0.04);--glass2:rgba(255,255,255,0.07);
+  --gborder:rgba(255,255,255,0.08);--gborder2:rgba(255,255,255,0.12);
+  --text:#E2E8F0;--text2:#8FA0B4;--text3:#3D5068;--white:#F8FAFC;
+  --fh:'Bebas Neue',sans-serif;--fb:'Barlow',sans-serif;--fc:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--black);color:var(--text);overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,7,8,0.65);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--gborder);transition:all .4s}
+nav.scrolled{background:rgba(6,7,8,0.88);border-bottom-color:var(--gold-border);box-shadow:0 4px 60px rgba(200,150,12,.07)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:36px;width:auto;object-fit:contain}
+.nav-logo-fb{font-family:var(--fh);font-size:22px;letter-spacing:3px;color:var(--white);display:none}
+.nav-logo-fb span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:var(--fc);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover{color:var(--gold)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:rgba(200,150,12,0.12)!important;border:1px solid var(--gold-border)!important;color:var(--gold)!important;padding:8px 18px;backdrop-filter:blur(10px);transition:all .25s!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--gold)!important;color:#000!important;box-shadow:0 0 28px var(--gold-glow)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--text2);transition:all .3s}
+.mmenu{display:none;position:fixed;inset:0;top:68px;background:rgba(6,7,8,0.97);backdrop-filter:blur(30px);z-index:499;padding:28px 6%;flex-direction:column;gap:0;border-top:1px solid var(--gold-border)}
+.mmenu.open{display:flex}
+.mmenu a{font-family:var(--fh);font-size:34px;letter-spacing:3px;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border);padding:13px 0;transition:color .2s}
+.mmenu a:hover{color:var(--gold)}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:0 5%;overflow:hidden}
+.hbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1800&q=80');background-size:cover;background-position:center;filter:brightness(.22) saturate(.5)}
+.hov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,7,8,.97) 35%,rgba(6,7,8,.55) 70%,transparent 100%),linear-gradient(180deg,transparent 40%,rgba(6,7,8,.9) 100%),radial-gradient(ellipse 60% 70% at 75% 50%,rgba(200,150,12,.07) 0%,transparent 70%)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,150,12,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,150,12,.025) 1px,transparent 1px);background-size:60px 60px}
+.hc{position:relative;z-index:1;max-width:700px}
+.heyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--fc);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;background:rgba(200,150,12,0.08);border:1px solid rgba(200,150,12,.18);padding:6px 14px;backdrop-filter:blur(10px)}
+h1.htitle{font-family:var(--fh);font-size:clamp(66px,10vw,136px);line-height:.9;color:var(--white);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+h1.htitle span{color:transparent;-webkit-text-stroke:2px var(--gold)}
+.hsub{font-family:var(--fh);font-size:clamp(26px,4vw,54px);line-height:1;color:var(--text3);letter-spacing:5px;text-transform:uppercase;margin-bottom:26px}
+.hdesc{font-size:16px;font-weight:300;color:var(--text2);line-height:1.75;max-width:500px;margin-bottom:36px}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#000;padding:13px 28px;font-family:var(--fc);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 16px 48px rgba(200,150,12,.35)}
+.btn-glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(12px);color:var(--text);padding:13px 28px;font-family:var(--fc);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-glass:hover{background:rgba(200,150,12,.1);border-color:var(--gold-border);color:var(--gold)}
+.hstats{position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:1;display:flex;flex-direction:column;gap:14px}
+.hstat{background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.07);border-left:2px solid var(--gold);padding:15px 20px;text-align:right;min-width:148px;transition:all .3s}
+.hstat:hover{background:rgba(200,150,12,.07);border-color:var(--gold-border)}
+.hstat-num{font-family:var(--fh);font-size:40px;color:var(--gold);line-height:1}
+.hstat-lbl{font-family:var(--fc);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text3)}
+.hscroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:1}
+.hscroll-txt{font-family:var(--fc);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text3)}
+.hscroll-line{width:1px;height:36px;background:linear-gradient(var(--gold),transparent);animation:sp 2s ease-in-out infinite}
+@keyframes sp{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* TICKER */
+.ticker{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));padding:11px 0;overflow:hidden;position:relative;z-index:1}
+.ticker-track{display:flex;white-space:nowrap;animation:tk 22s linear infinite}
+.ticker-item{font-family:var(--fh);font-size:14px;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.7);padding:0 34px;flex-shrink:0}
+.tdot{opacity:.35;margin:0 8px}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION */
+section{position:relative;z-index:1}
+.si{max-width:1200px;margin:0 auto;padding:0 5%}
+.slbl{display:inline-flex;align-items:center;gap:10px;font-family:var(--fc);font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.slbl::before{content:'';width:26px;height:1px;background:var(--gold)}
+h2.stitle{font-family:var(--fh);font-size:clamp(44px,6vw,82px);color:var(--white);letter-spacing:2px;text-transform:uppercase;line-height:.92;margin-bottom:14px}
+h2.stitle span{color:var(--gold)}
+.sdesc{font-size:15px;font-weight:300;color:var(--text2);line-height:1.75;max-width:540px}
+.gold-bar{height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold) 30%,var(--gold2) 50%,var(--gold) 70%,transparent 100%);position:relative;z-index:1}
+
+/* ABOUT */
+#about{padding:110px 0;background:linear-gradient(180deg,var(--black) 0%,var(--dark) 100%)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.aimg-wrap{position:relative}
+.aimg{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(15%) brightness(.88)}
+.aframe{position:absolute;top:-13px;left:-13px;right:13px;bottom:13px;border:1px solid var(--gold-border);z-index:-1;pointer-events:none}
+.aframe::before{content:'';position:absolute;top:8px;left:8px;right:-8px;bottom:-8px;border:1px solid rgba(200,150,12,.1)}
+/* glass badge */
+.abadge{position:absolute;bottom:-22px;right:-22px;background:rgba(200,150,12,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gold-border);width:116px;height:116px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--fh);text-align:center;box-shadow:0 8px 40px rgba(200,150,12,.18)}
+.abadge-num{font-size:36px;color:var(--gold);line-height:1}
+.abadge-txt{font-size:10px;letter-spacing:2px;color:var(--text2);line-height:1.4}
+.atext{padding-left:10px}
+.afeats{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+/* glass feature cards */
+.afeat{display:flex;align-items:flex-start;gap:14px;padding:17px;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--gborder);border-left:2px solid var(--gold);transition:all .3s}
+.afeat:hover{background:rgba(200,150,12,0.05);border-color:var(--gold-border);transform:translateX(4px)}
+.afeat-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.afeat-title{font-family:var(--fc);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.afeat-text{font-size:13px;color:var(--text2);font-weight:300;line-height:1.6}
+
+/* PRODUCTS */
+#products{padding:110px 0;background:var(--black);overflow:hidden}
+.pheader{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+/* glass product cards */
+.pcard{position:relative;overflow:hidden;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--gborder);transition:all .35s}
+.pcard::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,150,12,.05) 0%,transparent 60%);opacity:0;transition:opacity .35s}
+.pcard:hover{border-color:var(--gold-border);transform:translateY(-6px);box-shadow:0 24px 60px rgba(200,150,12,.14),0 0 0 1px rgba(200,150,12,.1)}
+.pcard:hover::before{opacity:1}
+.pimg-wrap{width:100%;aspect-ratio:1;overflow:hidden;background:linear-gradient(160deg,#181c20 0%,#0c0e10 100%);display:flex;align-items:center;justify-content:center;position:relative}
+.pimg-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(6,7,8,.9) 100%)}
+.pimg{width:100%;height:100%;object-fit:cover;transition:transform .45s;position:relative;z-index:1}
+.pcard:hover .pimg{transform:scale(1.05)}
+/* oil bottle placeholder */
+.oil-bot{width:110px;height:178px;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.ob-cap{width:48px;height:12px;background:var(--gold);border-radius:2px 2px 0 0;margin:0 auto}
+.ob-neck{width:42px;height:22px;background:linear-gradient(180deg,#1a2030,#0c0e12);border:1px solid rgba(200,150,12,.2);border-bottom:none;margin:0 auto}
+.ob-body{width:82px;height:132px;background:linear-gradient(160deg,#1a2030 0%,#0c0e12 60%,#1a1c20 100%);border:1px solid rgba(200,150,12,.28);border-radius:3px 3px 8px 8px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ob-body::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.ob-body::after{content:'';position:absolute;left:8px;right:8px;top:50%;bottom:10px;background:rgba(200,150,12,.05);border:1px solid rgba(200,150,12,.12);border-radius:2px;transform:translateY(-50%)}
+.ob-grade{font-family:var(--fh);font-size:18px;color:var(--gold);letter-spacing:1px;z-index:1;position:relative}
+.pbody{padding:22px}
+.pgrade{font-family:var(--fh);font-size:30px;letter-spacing:2px;color:var(--gold);margin-bottom:3px}
+.pname{font-family:var(--fc);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:12px}
+.pdesc{font-size:13px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:18px}
+.ptags{display:flex;flex-wrap:wrap;gap:5px}
+.ptag{font-family:var(--fc);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;background:rgba(200,150,12,.07);color:var(--gold);border:1px solid rgba(200,150,12,.15);backdrop-filter:blur(4px)}
+
+/* MARKETS */
+#markets{padding:100px 0;background:linear-gradient(180deg,var(--dark) 0%,var(--black) 100%)}
+.mktitle{text-align:center;margin-bottom:56px}
+.mktitle .slbl{justify-content:center}
+.mktitle .slbl::before{display:none}
+.mktitle .slbl::after{content:'';width:26px;height:1px;background:var(--gold)}
+.mkgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+/* glass market cards */
+.mkitem{position:relative;padding:34px 14px;text-align:center;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--gborder);transition:all .3s;overflow:hidden}
+.mkitem::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .3s}
+.mkitem:hover{background:rgba(200,150,12,.06);border-color:var(--gold-border);transform:translateY(-4px);box-shadow:0 14px 38px rgba(200,150,12,.1)}
+.mkitem:hover::after{transform:scaleX(1)}
+.mkicon{font-size:36px;margin-bottom:13px}
+.mklbl{font-family:var(--fc);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:5px}
+.mkname{font-family:var(--fh);font-size:18px;letter-spacing:1px;color:var(--white);text-transform:uppercase}
+
+/* WHY US */
+#whyus{padding:80px 0;position:relative;overflow:hidden}
+.wbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=60');background-size:cover;background-position:center;filter:brightness(.07) saturate(.3);z-index:0}
+.wi{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 5%}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+/* glass why-us cards */
+.wcard{padding:34px 26px;background:rgba(255,255,255,0.04);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.07);transition:all .3s}
+.wcard:hover{background:rgba(200,150,12,.07);border-color:var(--gold-border);box-shadow:0 0 50px rgba(200,150,12,.1)}
+.wnum{font-family:var(--fh);font-size:62px;color:rgba(200,150,12,.14);line-height:1;margin-bottom:10px}
+.wtitle{font-family:var(--fh);font-size:24px;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.wtext{font-size:13px;color:var(--text2);font-weight:300;line-height:1.75}
+
+/* TEAM */
+#team{padding:110px 0;background:var(--black)}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
+.tcard{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.06);transition:all .4s}
+.tcard:hover{border-color:var(--gold-border);box-shadow:0 20px 55px rgba(200,150,12,.12)}
+.timg-wrap{aspect-ratio:3/4;overflow:hidden;position:relative}
+.timg{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(25%) brightness(.88);transition:all .5s}
+.tcard:hover .timg{filter:grayscale(0%) brightness(1);transform:scale(1.05)}
+.tov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(6,7,8,.98) 100%)}
+/* glass team info */
+.tinfo{position:absolute;bottom:0;left:0;right:0;padding:18px;background:rgba(6,7,8,0.35);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,0.06);transform:translateY(4px);transition:transform .3s}
+.tcard:hover .tinfo{transform:translateY(0);border-top-color:var(--gold-border)}
+.tname{font-family:var(--fh);font-size:20px;letter-spacing:1px;color:var(--white);text-transform:uppercase}
+.trole{font-family:var(--fc);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:3px}
+/* glass GM bar */
+.gm-bar{margin-top:18px;display:flex;align-items:center;gap:22px;padding:22px 28px;background:rgba(200,150,12,0.06);backdrop-filter:blur(20px);border:1px solid var(--gold-border);flex-wrap:wrap}
+.gm-name{font-family:var(--fh);font-size:30px;color:var(--white);letter-spacing:2px}
+.gm-badge{font-family:var(--fc);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:5px 13px;background:rgba(200,150,12,.1);border:1px solid var(--gold-border);backdrop-filter:blur(8px)}
+.gm-desc{margin-left:auto;font-size:13px;color:var(--text2);font-weight:300;max-width:380px;line-height:1.65}
+
+/* CERTS */
+#certs{padding:80px 0;background:linear-gradient(180deg,var(--dark) 0%,var(--black) 100%);position:relative;overflow:hidden}
+#certs::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(200,150,12,.04) 0%,transparent 70%)}
+.ci{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 5%}
+.ch{text-align:center;margin-bottom:44px}
+.ch .slbl{justify-content:center}.ch .slbl::before{display:none}.ch .slbl::after{content:'';width:26px;height:1px;background:var(--gold)}
+.ctitle{font-family:var(--fh);font-size:clamp(30px,5vw,58px);text-align:center;color:var(--white);letter-spacing:3px;text-transform:uppercase;margin-bottom:5px}
+.csub{font-size:13px;color:var(--text3);text-align:center;font-style:italic}
+.cgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+/* glass cert tiles */
+.ctile{padding:20px 28px;background:rgba(255,255,255,0.03);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;min-width:128px;transition:all .3s;cursor:default}
+.ctile:hover{background:rgba(200,150,12,.07);border-color:var(--gold-border);box-shadow:0 0 28px rgba(200,150,12,.1)}
+.ctile img{height:40px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(1.6);transition:filter .3s}
+.ctile:hover img{filter:none}
+.ctile-text{font-family:var(--fh);font-size:16px;letter-spacing:3px;color:var(--text3);text-transform:uppercase;transition:color .3s}
+.ctile:hover .ctile-text{color:var(--gold)}
+
+/* GALLERY */
+#gallery{padding:80px 0;background:var(--dark2);overflow:hidden}
+.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:38px}
+.gitem{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
+.gitem img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(.82);transition:all .5s}
+.gitem::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,150,12,.18),transparent);opacity:0;transition:opacity .4s}
+.gitem:hover img{filter:grayscale(0%) brightness(1);transform:scale(1.08)}
+.gitem:hover::after{opacity:1}
+/* glass overlay on hover */
+.gitem-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px;opacity:0;transition:opacity .3s}
+.gitem:hover .gitem-overlay{opacity:1}
+.gitem-label{font-family:var(--fc);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:rgba(6,7,8,0.6);backdrop-filter:blur(10px);border:1px solid var(--gold-border);padding:5px 10px}
+
+/* CONTACT */
+#contact{padding:110px 0;position:relative;overflow:hidden}
+.cbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&q=60');background-size:cover;background-position:center;filter:brightness(.06) saturate(.3);z-index:0}
+.cx{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 5%}
+.cgr{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.cdetails{margin-top:32px;display:flex;flex-direction:column;gap:0}
+.cdet{display:flex;gap:16px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start}
+.cdet:last-child{border-bottom:none}
+/* glass icon */
+.cicon{width:42px;height:42px;background:rgba(200,150,12,.09);backdrop-filter:blur(10px);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.cdet-lbl{font-family:var(--fc);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:4px}
+.cdet-val{font-size:14px;color:var(--text);font-weight:400;line-height:1.6}
+.cdet-val a{color:var(--gold);text-decoration:none;transition:opacity .2s}
+.cdet-val a:hover{opacity:.8}
+.hgr{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:5px}
+.hr{display:flex;justify-content:space-between;font-size:12px;color:var(--text2);padding:2px 0}
+.hr span:last-child{color:var(--gold);font-family:var(--fc);font-weight:600;letter-spacing:1px}
+/* glass form */
+.cform{background:rgba(255,255,255,0.04);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,0.08);padding:38px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.ftitle{font-family:var(--fh);font-size:32px;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+.fsub{font-size:13px;color:var(--text2);margin-bottom:26px;font-weight:300;line-height:1.6}
+.fg{display:grid;gap:13px}
+.fg2{grid-template-columns:1fr 1fr}
+.fgrp{display:flex;flex-direction:column;gap:6px}
+.flbl{font-family:var(--fc);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}
+/* glass inputs */
+.finput{background:rgba(255,255,255,0.04);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.08);color:var(--text);padding:11px 13px;font-family:var(--fb);font-size:14px;outline:none;transition:all .2s;width:100%}
+.finput:focus{border-color:var(--gold-border);background:rgba(200,150,12,.04);box-shadow:0 0 0 3px rgba(200,150,12,.07)}
+.finput::placeholder{color:var(--text3)}
+textarea.finput{resize:vertical;min-height:106px}
+select.finput{cursor:pointer;-webkit-appearance:none}
+option{background:#111518}
+.fsubmit{width:100%;background:var(--gold);color:#000;padding:13px;font-family:var(--fc);font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:all .25s;margin-top:4px}
+.fsubmit:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 38px rgba(200,150,12,.34)}
+.fsuccess{display:none;background:rgba(16,185,129,.08);backdrop-filter:blur(8px);border:1px solid rgba(16,185,129,.2);color:#10B981;padding:13px;font-family:var(--fc);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;margin-top:11px}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);padding:62px 0 26px}
+.fi{max-width:1200px;margin:0 auto;padding:0 5%}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:46px;margin-bottom:46px}
+.fbdesc{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300;max-width:278px;margin-top:13px}
+.fct{font-family:var(--fc);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:15px}
+.flinks{display:flex;flex-direction:column;gap:9px}
+.flinks a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--gold)}
+.fci-list{display:flex;flex-direction:column;gap:10px}
+.fci{display:flex;gap:10px;align-items:flex-start}
+.fci-icon{color:var(--gold);font-size:12px;flex-shrink:0;margin-top:2px}
+.fci-text{font-size:12px;color:var(--text2);line-height:1.5}
+.fci-text a{color:var(--text2);text-decoration:none;transition:color .2s}
+.fci-text a:hover{color:var(--gold)}
+.fbot{border-top:1px solid rgba(255,255,255,0.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fcopy{font-size:12px;color:var(--text3)}
+.fcopy span{color:var(--gold)}
+.fbl{display:flex;gap:18px}
+.fbl a{font-size:11px;color:var(--text3);text-decoration:none;letter-spacing:1px;transition:color .2s}
+.fbl a:hover{color:var(--text2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:all .75s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.about-grid,.cgr{grid-template-columns:1fr;gap:46px}.aimg-wrap{max-width:420px}.fgrid{grid-template-columns:1fr 1fr;gap:30px}.tgrid{grid-template-columns:1fr 1fr}.mkgrid{grid-template-columns:repeat(3,1fr)}.ggrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.pgrid{grid-template-columns:1fr}.hstats{display:none}.fgrid{grid-template-columns:1fr}.mkgrid{grid-template-columns:1fr 1fr}.fg2{grid-template-columns:1fr}.wgrid{grid-template-columns:1fr}.gm-bar{flex-direction:column;gap:10px}.gm-desc{margin-left:0}}
+@media(max-width:480px){.tgrid{grid-template-columns:1fr}.mkgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/logo.png" alt="RulexxPlus" onerror="this.style.display='none';document.querySelector('.nav-logo-fb').style.display='block'">
+    <span class="nav-logo-fb">RULEXX<span>+</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#markets">Markets</a>
+    <a href="#team">Team</a>
+    <a href="#certs">Certifications</a>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mmenu" id="mm">
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#products" onclick="cm()">Products</a>
+  <a href="#markets" onclick="cm()">Markets</a>
+  <a href="#team" onclick="cm()">Team</a>
+  <a href="#certs" onclick="cm()">Certifications</a>
+  <a href="#contact" onclick="cm()" style="color:var(--gold)">Get a Quote →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div>
+  <div class="hov"></div>
+  <div class="hgrid"></div>
+  <div class="hc">
+    <div class="heyebrow">📍 Toronto, Canada &nbsp;·&nbsp; Premium Synthetic Oils</div>
+    <h1 class="htitle">ENGINEERED<br><span>PERFORMANCE</span></h1>
+    <div class="hsub">Premium Synthetic Oil</div>
+    <p class="hdesc">RulexxPlus delivers high-performance motor oils built to protect modern engines through cold Canadian winters, city traffic, highway miles, and heavy-duty work.</p>
+    <div class="hbtns">
+      <a href="#products" class="btn-gold">Explore Products →</a>
+      <a href="#contact" class="btn-glass">Wholesale Pricing</a>
+    </div>
+  </div>
+  <div class="hstats">
+    <div class="hstat"><div class="hstat-num">3</div><div class="hstat-lbl">Oil Grades</div></div>
+    <div class="hstat"><div class="hstat-num">5+</div><div class="hstat-lbl">Industries</div></div>
+    <div class="hstat"><div class="hstat-num">GTA</div><div class="hstat-lbl">Fast Delivery</div></div>
+  </div>
+  <div class="hscroll"><div class="hscroll-line"></div><div class="hscroll-txt">scroll</div></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">SAE 5W-30 <span class="tdot">◆</span></span><span class="ticker-item">SAE 0W-20 <span class="tdot">◆</span></span><span class="ticker-item">SAE 0W-16 <span class="tdot">◆</span></span><span class="ticker-item">Premium Synthetic <span class="tdot">◆</span></span><span class="ticker-item">Wholesale Available <span class="tdot">◆</span></span><span class="ticker-item">GTA Fast Delivery <span class="tdot">◆</span></span><span class="ticker-item">Engine Protection <span class="tdot">◆</span></span><span class="ticker-item">Toronto Based <span class="tdot">◆</span></span>
+    <span class="ticker-item">SAE 5W-30 <span class="tdot">◆</span></span><span class="ticker-item">SAE 0W-20 <span class="tdot">◆</span></span><span class="ticker-item">SAE 0W-16 <span class="tdot">◆</span></span><span class="ticker-item">Premium Synthetic <span class="tdot">◆</span></span><span class="ticker-item">Wholesale Available <span class="tdot">◆</span></span><span class="ticker-item">GTA Fast Delivery <span class="tdot">◆</span></span><span class="ticker-item">Engine Protection <span class="tdot">◆</span></span><span class="ticker-item">Toronto Based <span class="tdot">◆</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="si">
+    <div class="about-grid">
+      <div class="aimg-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b4d659b3?w=700&q=80" alt="Motor oil lab" class="aimg">
+        <div class="aframe"></div>
+        <div class="abadge"><div class="abadge-num">GTA</div><div class="abadge-txt">TORONTO<br>BASED</div></div>
+      </div>
+      <div class="atext reveal d2">
+        <div class="slbl">Who We Are</div>
+        <h2 class="stitle">POWERING<br><span>ENGINES</span><br>ACROSS GTA</h2>
+        <p class="sdesc">RulexxPlus is a Toronto-based premium synthetic motor oil distributor delivering advanced lubricants engineered for modern engines. We serve shops, fleets, and businesses across the GTA with competitive wholesale pricing, fast delivery, and expert guidance.</p>
+        <div class="afeats">
+          <div class="afeat"><div class="afeat-icon">⚡</div><div><div class="afeat-title">Fast Wholesale Delivery</div><div class="afeat-text">Bulk orders fulfilled quickly across the GTA. Give us your grade and quantity — we handle the rest.</div></div></div>
+          <div class="afeat"><div class="afeat-icon">🔬</div><div><div class="afeat-title">Lab-Tested Quality</div><div class="afeat-text">Every grade is tested for clean performance and strong engine protection under real-world Canadian conditions.</div></div></div>
+          <div class="afeat"><div class="afeat-icon">🛡️</div><div><div class="afeat-title">Trusted Engine Protection</div><div class="afeat-text">Cold starts, highway runs, heavy-duty cycles — our oils keep engines protected and your operation running.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-bar"></div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="si">
+    <div class="pheader">
+      <div class="reveal"><div class="slbl">Our Lineup</div><h2 class="stitle">OUR<br><span>PRODUCTS</span></h2></div>
+      <p class="sdesc reveal d2" style="text-align:right;max-width:300px">Three precision-engineered grades covering the full spectrum of modern gasoline, hybrid, and high-efficiency engines.</p>
+    </div>
+    <div class="pgrid">
+      <!-- 5W-30 -->
+      <div class="pcard reveal">
+        <div class="pimg-wrap">
+          <img src="https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=500&q=80" alt="5W-30 Motor Oil" class="pimg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="oil-bot" style="display:none"><div class="ob-cap"></div><div class="ob-neck"></div><div class="ob-body"><span class="ob-grade">5W-30</span></div></div>
+        </div>
+        <div class="pbody">
+          <div class="pgrade">SAE 5W-30</div><div class="pname">Full Synthetic Engine Oil</div>
+          <p class="pdesc">The all-season workhorse. Engineered for gasoline and light diesel engines. Excellent cold-start protection for Canadian winters with sustained high-temperature performance.</p>
+          <div class="ptags"><span class="ptag">Passenger Cars</span><span class="ptag">Trucks</span><span class="ptag">Full Synthetic</span><span class="ptag">All Season</span></div>
+        </div>
+      </div>
+      <!-- 0W-20 -->
+      <div class="pcard reveal d1">
+        <div class="pimg-wrap">
+          <img src="https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=500&q=80" alt="0W-20 Motor Oil" class="pimg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="oil-bot" style="display:none"><div class="ob-cap"></div><div class="ob-neck"></div><div class="ob-body"><span class="ob-grade">0W-20</span></div></div>
+        </div>
+        <div class="pbody">
+          <div class="pgrade">SAE 0W-20</div><div class="pname">Advanced Synthetic Oil</div>
+          <p class="pdesc">Designed for modern fuel-efficient and hybrid engines demanding ultra-low viscosity. Maximum fuel economy without sacrificing engine protection at operating temperatures.</p>
+          <div class="ptags"><span class="ptag">Hybrid Engines</span><span class="ptag">Fuel Economy</span><span class="ptag">Low Viscosity</span><span class="ptag">OEM Spec</span></div>
+        </div>
+      </div>
+      <!-- 0W-16 -->
+      <div class="pcard reveal d2">
+        <div class="pimg-wrap">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="0W-16 Motor Oil" class="pimg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="oil-bot" style="display:none"><div class="ob-cap"></div><div class="ob-neck"></div><div class="ob-body"><span class="ob-grade">0W-16</span></div></div>
+        </div>
+        <div class="pbody">
+          <div class="pgrade">SAE 0W-16</div><div class="pname">Ultra-Low Viscosity Synthetic</div>
+          <p class="pdesc">Next-generation oil for the latest hybrid and direct-injection engines. Meets the strictest OEM requirements for reduced friction and peak fuel efficiency.</p>
+          <div class="ptags"><span class="ptag">Latest Gen Engines</span><span class="ptag">Direct Injection</span><span class="ptag">Ultra-Low Viscosity</span><span class="ptag">Eco Performance</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:42px" class="reveal">
+      <a href="#contact" class="btn-gold">Request Wholesale Pricing →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section id="markets">
+  <div class="si">
+    <div class="mktitle reveal">
+      <div class="slbl">Coverage</div>
+      <h2 class="stitle" style="text-align:center">WHERE OUR OILS <span>PERFORM</span></h2>
+    </div>
+    <div class="mkgrid">
+      <div class="mkitem reveal"><div class="mkicon">🚗</div><div class="mklbl">Passenger</div><div class="mkname">Vehicles</div></div>
+      <div class="mkitem reveal d1"><div class="mkicon">🚛</div><div class="mklbl">Heavy Duty</div><div class="mkname">Trucks</div></div>
+      <div class="mkitem reveal d2"><div class="mkicon">🏗️</div><div class="mklbl">Heavy Equipment &amp;</div><div class="mkname">Construction</div></div>
+      <div class="mkitem reveal d3"><div class="mkicon">🏭</div><div class="mklbl">Manufacturing &amp;</div><div class="mkname">Industrial</div></div>
+      <div class="mkitem reveal d4"><div class="mkicon">🏍️</div><div class="mklbl">ATVs &amp;</div><div class="mkname">Motorcycles</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-bar"></div>
+
+<!-- WHY US -->
+<section id="whyus">
+  <div class="wbg"></div>
+  <div class="wi">
+    <div style="text-align:center;margin-bottom:48px" class="reveal">
+      <div class="slbl" style="justify-content:center"><span style="display:block;width:26px;height:1px;background:var(--gold)"></span>Why RulexxPlus<span style="display:block;width:26px;height:1px;background:var(--gold)"></span></div>
+      <h2 class="stitle" style="text-align:center">QUALITY YOU CAN <span>TRUST</span></h2>
+    </div>
+    <div class="wgrid">
+      <div class="wcard reveal"><div class="wnum">01</div><div class="wtitle">Fast Delivery & Wholesale</div><div class="wtext">Need oil for your shop or fleet? We offer competitive wholesale pricing, bulk orders, and dependable GTA delivery. Message us your grade and quantity — we'll handle the rest.</div></div>
+      <div class="wcard reveal d1"><div class="wnum">02</div><div class="wtitle">Quality You Can Trust</div><div class="wtext">Our oils are selected for clean performance and strong engine protection in real driving conditions — cold starts, city traffic, highways, and heavy-duty use.</div></div>
+      <div class="wcard reveal d2"><div class="wnum">03</div><div class="wtitle">Expert Team Support</div><div class="wtext">We help you choose the right viscosity grade, keep stock ready, and deliver fast — so your engine stays protected and your work never slows down.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="si">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+      <div class="reveal"><div class="slbl">The People</div><h2 class="stitle">MEET THE<br><span>TEAM</span></h2></div>
+      <p class="sdesc reveal d2" style="max-width:340px">Built on reliability — we help you choose the right grade, keep stock ready, and deliver fast.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <div class="timg-wrap">
+          <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/Abdul%20Ahad.jpeg" alt="Abdul Ahad" class="timg" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80'">
+          <div class="tov"></div>
+        </div>
+        <div class="tinfo"><div class="tname">Abdul Ahad</div><div class="trole">Team Member</div></div>
+      </div>
+      <div class="tcard reveal d1">
+        <div class="timg-wrap">
+          <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/Ahmad%20Shah.jpeg" alt="Ahmad Shah" class="timg" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80'">
+          <div class="tov"></div>
+        </div>
+        <div class="tinfo"><div class="tname">Ahmad Shah</div><div class="trole">Team Member</div></div>
+      </div>
+      <div class="tcard reveal d2">
+        <div class="timg-wrap">
+          <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/Mahmood.jpeg" alt="Mahmood" class="timg" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80'">
+          <div class="tov"></div>
+        </div>
+        <div class="tinfo"><div class="tname">Mahmood</div><div class="trole">Team Member</div></div>
+      </div>
+      <div class="tcard reveal d3">
+        <div class="timg-wrap">
+          <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/Nazir%20Ahmad%20Sultani.jpeg" alt="Nazir Ahmad Sultani" class="timg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'">
+          <div class="tov"></div>
+        </div>
+        <div class="tinfo"><div class="tname">Nazir Ahmad Sultani</div><div class="trole">Team Member</div></div>
+      </div>
+    </div>
+    <div class="gm-bar reveal">
+      <div class="gm-name">BILAL BABA</div>
+      <div class="gm-badge">General Manager</div>
+      <div class="gm-desc">Leading RulexxPlus with a focus on quality products, reliable delivery, and building long-term relationships with shops and fleets across the GTA.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="ci">
+    <div class="ch reveal">
+      <div class="slbl">Standards We Meet</div>
+      <div class="ctitle">CERTIFIED BY</div>
+      <div class="csub">All RulexxPlus products meet or exceed industry certification standards</div>
+    </div>
+    <div class="cgrid">
+      <div class="ctile reveal">
+        <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/SEA.png" alt="SAE" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="ctile-text" style="display:none">SAE</span>
+      </div>
+      <div class="ctile reveal d1"><span class="ctile-text">API</span></div>
+      <div class="ctile reveal d2"><span class="ctile-text">ILSAC</span></div>
+      <div class="ctile reveal d3"><span class="ctile-text">ACEA</span></div>
+      <div class="ctile reveal d4"><span class="ctile-text">OEM APPROVED</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="si">
+    <div class="reveal" style="text-align:center">
+      <div class="slbl" style="justify-content:center"><span style="display:block;width:26px;height:1px;background:var(--gold)"></span>Our Work<span style="display:block;width:26px;height:1px;background:var(--gold)"></span></div>
+      <h2 class="stitle" style="text-align:center">GALLERY</h2>
+    </div>
+    <div class="ggrid">
+      <div class="gitem reveal">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80" alt="Engine oil">
+        <div class="gitem-overlay"><span class="gitem-label">Engine Oil</span></div>
+      </div>
+      <div class="gitem reveal d1">
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b4d659b3?w=600&q=80" alt="Lab testing">
+        <div class="gitem-overlay"><span class="gitem-label">Lab Testing</span></div>
+      </div>
+      <div class="gitem reveal d2">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&q=80" alt="Industrial">
+        <div class="gitem-overlay"><span class="gitem-label">Industrial Use</span></div>
+      </div>
+      <div class="gitem reveal d3">
+        <img src="https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=600&q=80" alt="Fleet trucks">
+        <div class="gitem-overlay"><span class="gitem-label">Fleet Trucks</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-bar"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="cbg"></div>
+  <div class="cx">
+    <div class="cgr">
+      <div class="reveal">
+        <div class="slbl">Let's Talk</div>
+        <h2 class="stitle">GET IN<br><span>TOUCH</span></h2>
+        <p class="sdesc">Need oil for your shop or fleet? We offer competitive wholesale pricing, bulk orders, and dependable GTA delivery. Tell us your grade and quantity.</p>
+        <div class="cdetails">
+          <div class="cdet"><div class="cicon">📍</div><div><div class="cdet-lbl">Address</div><div class="cdet-val">3280 Steeles Ave W, Unit #16<br>L4K 2Y2 — Toronto, ON</div></div></div>
+          <div class="cdet"><div class="cicon">📞</div><div><div class="cdet-lbl">Phone</div><div class="cdet-val"><a href="tel:14168547332">1-416-854-7332</a></div></div></div>
+          <div class="cdet"><div class="cicon">✉️</div><div><div class="cdet-lbl">Email</div><div class="cdet-val"><a href="mailto:info@rulexplus.ca">info@rulexplus.ca</a></div></div></div>
+          <div class="cdet"><div class="cicon">🕐</div><div><div class="cdet-lbl">Working Hours</div><div class="hgr"><div class="hr"><span>Mon – Fri</span><span>8:00 – 20:00</span></div><div class="hr"><span>Saturday</span><span>9:00 – 16:00</span></div><div class="hr"><span>Sunday</span><span>Closed</span></div><div class="hr"><span>Holidays</span><span>10:00 – 14:00</span></div></div></div></div>
+        </div>
+      </div>
+      <div class="cform reveal d2">
+        <div class="ftitle">WHOLESALE INQUIRY</div>
+        <div class="fsub">Fill in the form and we'll get back to you within 24 hours with pricing and availability.</div>
+        <div class="fg">
+          <div class="fg fg2">
+            <div class="fgrp"><label class="flbl">Full Name *</label><input class="finput" id="fn" placeholder="Your name" type="text"></div>
+            <div class="fgrp"><label class="flbl">Business Name</label><input class="finput" id="fb" placeholder="Shop / Company" type="text"></div>
+          </div>
+          <div class="fg fg2">
+            <div class="fgrp"><label class="flbl">Phone *</label><input class="finput" id="fp" placeholder="+1 (416) 000-0000" type="tel"></div>
+            <div class="fgrp"><label class="flbl">Email *</label><input class="finput" id="fe" placeholder="you@company.com" type="email"></div>
+          </div>
+          <div class="fg fg2">
+            <div class="fgrp"><label class="flbl">Oil Grade</label>
+              <select class="finput" id="fg2"><option value="">Select grade...</option><option>SAE 5W-30</option><option>SAE 0W-20</option><option>SAE 0W-16</option><option>Multiple Grades</option><option>Not Sure — Need Advice</option></select>
+            </div>
+            <div class="fgrp"><label class="flbl">Estimated Quantity</label>
+              <select class="finput" id="fq"><option value="">Select quantity...</option><option>1–10 Cases</option><option>10–50 Cases</option><option>50–100 Cases</option><option>100+ Cases / Bulk</option></select>
+            </div>
+          </div>
+          <div class="fgrp"><label class="flbl">Message</label><textarea class="finput" id="fm" placeholder="Tell us about your needs — vehicle types, volume, delivery location..."></textarea></div>
+          <button class="fsubmit" onclick="submitForm()">SEND INQUIRY →</button>
+          <div class="fsuccess" id="fs">✓ Message received! We'll be in touch within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="fgrid">
+      <div>
+        <a href="#" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px">
+          <img src="https://raw.githubusercontent.com/rahimiabdulrahmanab/rulexxplus/main/logo.png" alt="RulexxPlus" style="height:38px;object-fit:contain" onerror="this.style.display='none';document.getElementById('flb').style.display='block'">
+          <span id="flb" style="display:none;font-family:var(--fh);font-size:22px;letter-spacing:3px;color:var(--white)">RULEXX<span style="color:var(--gold)">+</span></span>
+        </a>
+        <p class="fbdesc">Premium synthetic motor oils engineered to protect modern engines. Serving shops, fleets, and businesses across the GTA.</p>
+      </div>
+      <div>
+        <div class="fct">Products</div>
+        <div class="flinks"><a href="#products">SAE 5W-30</a><a href="#products">SAE 0W-20</a><a href="#products">SAE 0W-16</a><a href="#contact">Wholesale Orders</a></div>
+      </div>
+      <div>
+        <div class="fct">Company</div>
+        <div class="flinks"><a href="#about">About Us</a><a href="#team">Our Team</a><a href="#markets">Industries</a><a href="#certs">Certifications</a></div>
+      </div>
+      <div>
+        <div class="fct">Contact</div>
+        <div class="fci-list">
+          <div class="fci"><div class="fci-icon">📍</div><div class="fci-text">3280 Steeles Ave W, Unit #16<br>L4K 2Y2, Toronto, ON</div></div>
+          <div class="fci"><div class="fci-icon">📞</div><div class="fci-text"><a href="tel:14168547332">1-416-854-7332</a></div></div>
+          <div class="fci"><div class="fci-icon">✉️</div><div class="fci-text"><a href="mailto:info@rulexplus.ca">info@rulexplus.ca</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="fbot">
+      <div class="fcopy">© 2026 <span>RulexxPlus Mobile Oil</span>. All Rights Reserved. Toronto, Canada.</div>
+      <div class="fbl"><a href="#">Privacy</a><a href="#">Terms</a><a href="#contact">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+function toggleMenu(){document.getElementById('mm').classList.toggle('open')}
+function cm(){document.getElementById('mm').classList.remove('open')}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'smooth'})}});
+});
+function submitForm(){
+  const n=document.getElementById('fn').value.trim(),p=document.getElementById('fp').value.trim(),e=document.getElementById('fe').value.trim();
+  if(!n||!p||!e){alert('Please fill in your name, phone and email.');return}
+  document.getElementById('fs').style.display='block';
+  ['fn','fb','fp','fe','fm'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fg2').value='';document.getElementById('fq').value='';
+  setTimeout(()=>document.getElementById('fs').style.display='none',5000);
+}
+</script>
+</body>
+</html>
